@@ -7,6 +7,16 @@ import gc
 
 music_database = library.Library()
 
+if __name__ == "__main__":
+    import sys
+    initialize()
+
+def initialize():
+    '''Starts the program'''
+    print("\n\nWelcome to shazoinks CS51!")
+    auto()
+    menu()
+
 def auto():
     '''Tasks to be run automatically each time the program starts up.'''
 
@@ -18,6 +28,34 @@ def auto():
         print("\nLibrary loaded! Contains %d songs.\n\n" % num)
     music_database.export()
     menu()
+
+def menu():
+    '''Brings up main menu for program.'''
+    print("****\n\n")
+    print("Please choose an option:")
+    print("[1] Match a song from file")
+    print("[2] Match a song from microphone")
+    print("    --------------------")
+    print("[a] Admin panel")
+    print("[q] Quit")
+    print("\n\n****")
+    ans = raw_input()
+    if ans == '1':
+        match_file()
+    elif ans == '2':
+        match_live()
+    elif ans == 'a':
+        admin()
+    elif ans == 'q':
+        print("****")
+        print("\n\n\n**********")
+        print(" Oh, bai!")
+        print("**********\n\n\n")
+        sys.exit()
+    else:
+        print("Invalid input.")
+        print("")
+        menu()
 
 def cache_library():
     '''Caches and optionally clears currently stored library.'''
@@ -293,34 +331,6 @@ def test():
         test()
     admin()
 
-def menu():
-    '''Brings up main menu for program.'''
-    print("****\n\n")
-    print("Please choose an option:")
-    print("[1] Match a song from file")
-    print("[2] Match a song from microphone")
-    print("    --------------------")
-    print("[a] Admin panel")
-    print("[q] Quit")
-    print("\n\n****")
-    ans = raw_input()
-    if ans == '1':
-        match_file()
-    elif ans == '2':
-        match_live()
-    elif ans == 'a':
-        admin()
-    elif ans == 'q':
-        print("****")
-        print("\n\n\n**********")
-        print(" Oh, bai!")
-        print("**********\n\n\n")
-        sys.exit()
-    else:
-        print("Invalid input.")
-        print("")
-        menu()
-
 def admin():
     '''Brings up admin menu, which has useful debugging tools'''
     print("****\n\n")
@@ -358,12 +368,5 @@ def admin():
         print("")
         admin()
 
-def initialize():
-    '''Starts the program'''
-    print("\n\nWelcome to shazoinks CS51!")
-    auto()
-    menu()
 
-if __name__ == "__main__":
- import sys
- initialize()
+

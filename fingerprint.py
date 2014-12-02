@@ -158,6 +158,15 @@ class Fingerprint:
         #sort constellation in time
         constellation = sorted(constellation)
 
+        #print constellation to log
+        # f = open('log.txt', 'w')
+        # for x in constellation:
+        #     f.write(str(x))
+        # f.close()
+
+        print "CONSTELLATION READOUT"
+        print str(constellation)
+
         #Below plots versus spectrogram for testing
         spf.close()
         self._fast_hash(constellation)
@@ -210,7 +219,7 @@ class Fingerprint:
         #self.plot_fing()
 
 def compare(sample_fingerprint,library_fingerprint):
-    '''Compares two fingerprints and determines how liekly it is that they
+    '''Compares two fingerprints and determines how likely it is that they
            are derived from the same song.
 
            @param Fingerprint the sample's fingerprint
