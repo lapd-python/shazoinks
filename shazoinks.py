@@ -7,10 +7,6 @@ import gc
 
 music_database = library.Library()
 
-if __name__ == "__main__":
-    import sys
-    initialize()
-
 def initialize():
     '''Starts the program'''
     print("\n\nWelcome to shazoinks CS51!")
@@ -369,4 +365,6 @@ def admin():
         admin()
 
 
-
+if __name__ == "__main__":
+    import sys
+    initialize()

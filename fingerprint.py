@@ -164,8 +164,8 @@ class Fingerprint:
         #     f.write(str(x))
         # f.close()
 
-        print "CONSTELLATION READOUT"
-        print str(constellation)
+        # print "CONSTELLATION READOUT"
+        # print str(constellation)
 
         #Below plots versus spectrogram for testing
         spf.close()
